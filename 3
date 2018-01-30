@@ -1,0 +1,15 @@
+uses graphabc;
+var
+  step, start, height, width, x1, y1:integer;
+begin
+  height := 700;
+  width := 700;
+  SetWindowHeight(height); SetWindowWidth(width);
+  readln(start, step);
+  y1 := (height div 2) - (start div 2);
+  x1 :=0;
+  repeat
+    drawRectangle(x1,y1,x1 + start,y1 + start);
+    x1 := x1 + start + step;
+  until x1 > (width - step  +1);
+end.

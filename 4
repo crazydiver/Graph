@@ -1,0 +1,11 @@
+uses graphabc;
+var st,step,count,i:integer;
+begin
+  SetWindowWidth(750);setwindowheight(750);
+  read(st,step,count);
+  for i:=1 to count do
+    begin
+      DrawRectangle(350-st,350-st,350+st,350+st);
+      st+=step;
+    end;
+end.  

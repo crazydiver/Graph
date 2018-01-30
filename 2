@@ -1,0 +1,13 @@
+uses graphabc;
+var
+  crutch,step,start:integer;
+// points:array of point;
+begin
+  SetWindowHeight(700); SetWindowWidth(700);
+  readln(step,start);
+  Rectangle(700,700,700-start,700-start);
+  repeat
+    drawRectangle(700,700,700-start,700-start);
+    start+=step;
+  until start=700;
+end.

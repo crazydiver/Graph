@@ -1,0 +1,29 @@
+uses graphabc;
+var
+  min, max, delta, h, height, i: integer;
+  cordin: array of Point;
+
+begin
+  SetWindowWidth(750);setwindowheight(500);
+  SetPenColor(clGreen);
+  
+  read(min, max, delta, h);
+  
+  if ((max - min) mod delta) = 0 then
+    height := ((max - min) div delta) * h
+  else height := (((max - min) div delta) + 1) * h;
+  
+  SetLength(cordin, 3);
+  cordin[0].x := (750 div 2);cordin[0].y := 0;
+  cordin[1].x := (cordin[0].x + (min div 2));cordin[1].y := (cordin[0].y + h); 
+  cordin[2].x := (cordin[1].x - min);cordin[2].y := cordin[1].y;
+  for i := 1 to (height div h) do
+    begin
+      Polygon(cordin);
+      cordin[0].y += h;
+      cordin[1].x += (delta div 2); 
+      cordin[1].y += h;
+      cordin[2].x -= (delta div 2); 
+      cordin[2].y += h;
+    end;
+end.
